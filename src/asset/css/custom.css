@@ -1,0 +1,9 @@
+.navBarLink{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    /* padding: 10px; */
+    color: white;
+    padding-top: 20px ;
+    padding-right: 20px;
+}

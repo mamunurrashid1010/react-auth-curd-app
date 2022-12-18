@@ -1,0 +1,21 @@
+import React, { Component } from 'react';
+import { Routes,Route } from 'react-router-dom';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Registration from '../pages/Registration';
+
+class MyRoute extends Component {
+    render() {
+        return (
+            <div>
+                <Routes>	
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/registration" element={<Registration/>} />
+                </Routes>
+            </div>
+        );
+    }
+}
+
+export default MyRoute;
