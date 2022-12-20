@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form,Button, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import { redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 class Registration extends Component {
     constructor(){
@@ -59,7 +59,7 @@ class Registration extends Component {
         .then(response=>{
             this.setState({postResult:response.data});
             alert(response.data.message);
-            <redirect to="/login" />
+            <Navigate  to="/login" />
         })
         .catch(error=>{
             console.log(error);
