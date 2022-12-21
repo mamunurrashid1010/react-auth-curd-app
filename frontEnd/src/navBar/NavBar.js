@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../asset/css/bootstrap.min.css';
 import { Navbar,Container,Nav,NavDropdown,Form,Button} from "react-bootstrap"; // react bootstrap 
 import { Link } from 'react-router-dom';
-
+import '../asset/css/custom.css';
 class NavBar extends Component {
     render() {
         return (
@@ -17,32 +17,10 @@ class NavBar extends Component {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Link to="/"> <p className='navBarLink'>HOME</p> </Link>
-                            <Link to="/login"> <p className='navBarLink'>LOGIN</p> </Link>
-                            <Link to="/registration"> <p className='navBarLink'>REGISTRATION</p> </Link> 
-                            {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                Something else here
-                            </NavDropdown.Item>
-                            </NavDropdown> */}
-                            {/* <Nav.Link href="#" disabled>
-                            Link
-                            </Nav.Link> */}
+                            <Link to="/" className='navBarLink'> <p>HOME</p> </Link>
                         </Nav>
-                        {/* <Form className="d-flex">
-                            <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form> */}
+                            <Link to="/login" className='navBarLink'> <p>LOGIN</p> </Link>
+                            <Link to="/registration" className='navBarLink'> <p>REGISTRATION</p> </Link> 
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>

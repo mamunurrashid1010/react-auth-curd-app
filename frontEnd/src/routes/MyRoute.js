@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route,Navigate } from 'react-router-dom';
+import Dashboard from '../pages/adminPanel/Dashboard';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Registration from '../pages/Registration';
@@ -12,6 +13,7 @@ class MyRoute extends Component {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/registration" element={<Registration/>} />
+                    <Route path="/dashboard" element={<Dashboard/>} />           
                 </Routes>
             </div>
         );
