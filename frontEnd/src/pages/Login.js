@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form,Button, Container, Row, Col,Alert } from 'react-bootstrap';
 import axios from 'axios';
 import { Navigate, Link } from 'react-router-dom';
+import NavBar from '../navBar/NavBar';
 
 class Login extends Component {
     constructor(){
@@ -52,15 +53,18 @@ class Login extends Component {
         }
         return (
             <div>
+                <NavBar/>
                 <Container>
                     <Row>
-                        <Col>{this.state.email}<br></br>{this.state.password}</Col>
                         <Col>
-                            <h4 style={{paddingTop:'100px'}}><Alert className='alert'>Login</Alert></h4><br></br>
+                        {/* {this.state.email}<br></br>{this.state.password} */}
+                        </Col>
+                        <Col lg={6} md={6} sm={12} style={{marginTop:'100px',padding:'10px', backgroundColor:'#f5f4f4'}}>
+                            <h5><Alert className='alert bg-secondary text-white'>Login</Alert></h5><br></br>
                             <h5 style={{color:'red'}}>{this.state.errorMessage}</h5>
                             <h5 style={{color:'red'}}>{this.state.postResult}</h5>
                             <form onSubmit={this.formSubmitHandler}>
-                                <label style={{float:'left'}}>Email address</label>
+                                <label style={{float:'left'}}>Email</label>
                                 <input name="email" type="text" placeholder="example@mail.com" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
                                 <label style={{float:'left'}}>Password</label>
                                 <input name="password" type="text" placeholder="Enter password" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>

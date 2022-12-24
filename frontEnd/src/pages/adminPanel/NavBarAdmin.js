@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import '../asset/css/bootstrap.min.css';
+import React, { Component, Fragment } from 'react';
 import { Navbar,Container,Nav,NavDropdown,Form,Button} from "react-bootstrap"; // react bootstrap 
 import { Link } from 'react-router-dom';
-import '../asset/css/custom.css';
-class NavBar extends Component {
+
+class NavBarAdmin extends Component {
     render() {
         return (
-            <div>
+            <Fragment>
                 <Navbar bg="dark" variant="dark">
                     <Container fluid>
-                        <Link to="/" className='navBarLink'> <p>React App (Auth & CURD)</p> </Link>
+                        {/* <Navbar.Brand href="#">Admin Panel</Navbar.Brand> */}
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -17,16 +16,15 @@ class NavBar extends Component {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
+                            <Link to="/dashboard" className='navBarLink'> <p>DASHBOARD</p> </Link>
                         </Nav>
-                        <Link to="/" className='navBarLink'> <p>Home</p> </Link>
-                            <Link to="/login" className='navBarLink'> <p>Login</p> </Link>
-                            <Link to="/registration" className='navBarLink'> <p>Registration</p> </Link> 
+                            <Link to="/logout" className='navBarLink'> <p>Logout</p> </Link>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-            </div>
+            </Fragment>
         );
     }
 }
 
-export default NavBar;
+export default NavBarAdmin;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form,Button, Container, Row, Col,Alert } from 'react-bootstrap';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
+import NavBar from '../navBar/NavBar';
 
 class Registration extends Component {
     constructor(){
@@ -86,7 +87,8 @@ class Registration extends Component {
     render() {
         return (
             <div>
-                <Row>
+                <NavBar/>
+                <Row className='p-2'>
                         <Col>
                             {/* <p>Name: {this.state.fullName}</p>
                             <p>Mobile: {this.state.mobile}</p>
@@ -94,21 +96,26 @@ class Registration extends Component {
                             <p>password: {this.state.password}</p>
                             <p>user: {this.state.userDetails}</p> */}
                         </Col>
-                        <Col>
-                        <h3 style={{paddingTop:'100px'}}><Alert className='alert'>Registration</Alert></h3><br></br>
-                        <h5>{this.state.validationError}</h5>
-                        {/* server error message*/}
-                        <h5>{this.state.errorMessage}</h5>
-                        <h5>{this.state.postResult}</h5>
-                        <form onSubmit={this.formSubmitHandler}>
-                            <input name="fullName" type="text" placeholder="Enter your name" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
-                            <input name="mobile" type="text" placeholder="Mobile No" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
-                            <input name="email" type="text" placeholder="example@mail.com" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
-                            <input name="password" type="text" placeholder="password" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
-                      
-                            <br></br>
-                            <input className='btn btn-success' type="submit" value="Registration Now"></input>
-                        </form>
+                        <Col lg={6} md={6} sm={12} style={{marginTop:'100px',padding:'10px', backgroundColor:'#f5f4f4'}}>
+                            <h5><Alert className='alert bg-secondary text-white'>Registration</Alert></h5><br></br>
+
+                            <h5 style={{color:'red'}}>{this.state.validationError}</h5>
+                            {/* server error message*/}
+                            <h5 style={{color:'red'}}>{this.state.errorMessage}</h5>
+                            <h5>{this.state.postResult}</h5>
+
+                            <form onSubmit={this.formSubmitHandler}>
+                                <label style={{float:'left'}}>Name</label>
+                                <input name="fullName" type="text" placeholder="Enter your name" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
+                                <label style={{float:'left'}}>Mobile</label>
+                                <input name="mobile" type="text" placeholder="Mobile No" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
+                                <label style={{float:'left'}}>Email</label>
+                                <input name="email" type="text" placeholder="example@mail.com" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
+                                <label style={{float:'left'}}>Email</label>
+                                <input name="password" type="text" placeholder="password" onChange={this.inputOnChnageHandler} style={{width:'100%'}}></input><br></br><br></br>
+                        
+                                <input className='btn btn-success' type="submit" value="Registration Now"></input>
+                            </form>
                         </Col>
                         <Col></Col>
                 </Row>
