@@ -18,6 +18,7 @@ class NavBarAdmin extends Component {
                         >
                             <Link to="/dashboard" className='navBarLink'> <p>DASHBOARD</p> </Link>
                         </Nav>
+                            <Link to="/profile" className='navBarLink'> <p>Profile</p> </Link>
                             <Link to="/logout" className='navBarLink'> <p>Logout</p> </Link>
                         </Navbar.Collapse>
                     </Container>
