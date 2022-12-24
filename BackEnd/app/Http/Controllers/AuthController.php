@@ -96,4 +96,11 @@ class AuthController extends Controller
         Auth::logout();
         return response()->json(['message'=>'User logged out']);
     }
+
+    /*
+     * Profile
+     */
+    public function profile(){
+        return response()->json(Auth::user());
+    }
 }
